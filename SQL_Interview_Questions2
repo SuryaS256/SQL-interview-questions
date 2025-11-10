@@ -1,0 +1,75 @@
+Q-1. Write an SQL query to print details of the Workers whose FIRST_NAME contains ‘a’.
+
+Query:
+
+Select *
+from Worker
+where first_name like '%a%';
+
+Q-2. Write an SQL query to print details of the Workers whose FIRST_NAME ends with ‘a’.
+
+Query:
+
+Select *
+from Worker
+where first_name like '%a';
+
+Q-3. Write an SQL query to print details of the Workers whose FIRST_NAME ends with ‘h’ and contains six alphabets.
+
+QUery:
+
+Select *
+from Worker
+where first_name like '_____h';
+
+Q-4. Write an SQL query to print details of the Workers whose SALARY lies between 100000 and 500000.
+
+Query:
+
+Select *
+from worker
+where Salary between 100000 and 500000;
+
+Q-5. Write an SQL query to print details of the Workers who have joined in Feb’2014.
+
+Query:
+
+Select *
+from worker
+where month(joining_date)=2 and year(joining_date)=2014;
+
+Q-6. Write an SQL query to fetch the count of employees working in the department ‘Admin’.
+
+Query:
+
+Select count(*)
+from worker
+where department='Admin';
+
+Q-7. Write an SQL query to fetch worker names with salaries >= 50000 and <= 100000.
+
+Query:
+
+Select concat(first_name,' ',last_name) AS full_name, Salary
+from Worker
+where Salary between 50000 and 100000;
+
+Q-8. Write an SQL query to fetch the no. of workers for each department in the descending order.
+
+Query:
+
+Select department,count(worker_id) as no_of_workers 
+from Worker
+group by department
+order by count(no_of_workers) desc;
+
+Q-9. Write an SQL query to print details of the Workers who are also Managers.
+
+Query:
+
+Select *
+from Worker W,Title T
+where W.WORKER_ID=T.WORKER_REF_ID and T.WORKER_TITLE='Manager';
+
+
+
