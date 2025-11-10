@@ -1,0 +1,85 @@
+﻿Q-1. Write an SQL query to fetch “FIRST_NAME” from Worker table in upper case.
+
+
+Query:
+
+
+Select upper(first_name)
+from worker;
+
+
+Q-2. Write an SQL query to fetch unique values of DEPARTMENT from Worker table.
+
+
+Query:
+
+
+Select distinct department 
+from worker;
+
+
+Q-3. Write an SQL query to print the first three characters of FIRST_NAME from Worker table.
+
+
+Query:
+
+
+Select substring(first_name,1,3)
+from worker;
+
+
+Q-4. Write an SQL query that fetches the unique values of DEPARTMENT from Worker table and prints its length.
+
+
+Query:
+
+
+Select distinct department , length(department)
+from worker;
+
+
+Q-5. Write an SQL query to print the FIRST_NAME from Worker table after replacing ‘a’ with ‘A’.
+
+
+Query:
+
+
+Select replace(first_name,’a’,’A’)
+from worker;
+
+
+Q-6. Write an SQL query to print the FIRST_NAME and LAST_NAME from Worker table into a single column COMPLETE_NAME. A space char should separate them.
+
+
+Query:
+
+
+Select concat(first_name,’ ’,last_name) AS complete_name
+from worker;
+
+
+Q-7. Write an SQL query to print all Worker details from the Worker table order by FIRST_NAME Ascending.
+Query:
+
+
+Select *
+From worker
+order by first_name asc;
+
+
+Q-8. Write an SQL query to print details for Workers with the first name as “Vipul” and “Satish” from the Worker table.
+Query:
+
+
+Select *
+From worker
+where first_name IN (‘Vipul’,’Satish’);
+
+
+Q-9. Write an SQL query to print details of Workers with DEPARTMENT name as “Admin”.
+Query:
+
+
+Select *
+From Worker
+Where department=’Admin’;
